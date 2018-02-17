@@ -12,7 +12,8 @@ class AutoSuggest extends PureComponent {
 	}
 
 	setFilteredDebounced = input => {
-		const filtered = input.length > 1 ? input : "";
+		const filtered = input.length > 1 ? input.replace(/\\/g, '') : "";
+
 		return this.setState({filtered})
 	}
 
